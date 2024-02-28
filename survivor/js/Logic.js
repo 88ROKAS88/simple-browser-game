@@ -8,6 +8,7 @@ class Logic {
   runGame(game) {
     // player movement
     game.player.positionY += game.player.changeY;
+    game.player.positionX += game.player.changeX;
   }
 
   // stop game time

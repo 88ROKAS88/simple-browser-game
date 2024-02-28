@@ -3,9 +3,13 @@ class Player {
     this.game = game;
     this.positionY = 0;
     this.changeY = 0;
+    this.positionX = 0;
+    this.changeX = 0;
+
+    this.speed = 2;
   }
   draw() {
     game.display.ctx.fillStyle = "red";
-    game.display.ctx.fillRect(0, 0, 50, 50);
+    game.display.ctx.fillRect(this.positionX, this.positionY, 50, 50);
   }
 }
