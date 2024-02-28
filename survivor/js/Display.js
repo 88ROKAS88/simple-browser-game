@@ -16,7 +16,7 @@ class Display {
 
   backgroundDraw() {
     this.ctx.fillStyle = "black";
-    this.ctx.fillRect(0, 0, 500, 800);
+    this.ctx.fillRect(0, 0, 700, 700);
   }
 
   // animate
