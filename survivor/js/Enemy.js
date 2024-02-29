@@ -12,4 +12,5 @@ class Enemy {
     game.display.ctx.fillStyle = "red";
     game.display.ctx.fillRect(this.positionX, this.positionY, 50, 50);
   }
+  ai() {}
 }
