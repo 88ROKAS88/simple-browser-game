@@ -9,6 +9,10 @@ class Logic {
     // player movement
     game.player.positionY += game.player.changeY;
     game.player.positionX += game.player.changeX;
+    // enemy movement
+    game.enemies.forEach((element) => {
+      element.ai();
+    });
   }
 
   // stop game time
