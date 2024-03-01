@@ -26,6 +26,10 @@ class Display {
 
     game.player.draw();
 
+    game.enemies.forEach((element) => {
+      element.draw();
+    });
+
     requestAnimationFrame(game.display.animate);
   }
 }
