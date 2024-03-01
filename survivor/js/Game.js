@@ -4,7 +4,7 @@ class Game {
     this.player = new Player(this);
 
     // #### ENEMIES ####
-    this.enemies = [];
+    this.enemies = [new Enemy()];
 
     // #### SYSTEM ####
     this.display = new Display(this);
