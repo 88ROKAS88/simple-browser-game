@@ -22,15 +22,15 @@ class Enemy {
     this.displayHP();
   }
   ai() {
-    if (game.player.positionY > this.positionY) {
+    if (game.player.positionY > this.positionY + 50 + 25) {
       this.positionY += this.speed;
-    } else if (game.player.positionY < this.positionY) {
+    } else if (game.player.positionY < this.positionY - 50 - 25) {
       this.positionY -= this.speed;
     }
 
-    if (game.player.positionX > this.positionX) {
+    if (game.player.positionX > this.positionX + 50 + 25) {
       this.positionX += this.speed;
-    } else if (game.player.positionX < this.positionX) {
+    } else if (game.player.positionX < this.positionX - 50 - 25) {
       this.positionX -= this.speed;
     }
   }
