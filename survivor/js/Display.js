@@ -10,7 +10,7 @@ class Display {
     // ctx
     this.ctx = canvas.getContext("2d");
     {
-      this.sprite.src = "./sprite.png";
+      this.sprite.src = "./sprites/playerSprite.png";
     }
   }
 

@@ -1,5 +1,5 @@
 window.addEventListener("keydown", (e) => {
-  console.log(e.key);
+  // console.log(e.key);
 
   if (e.key == "ArrowUp") {
     // game.player.changeY = -game.player.speed;
@@ -17,6 +17,7 @@ window.addEventListener("keydown", (e) => {
     // game.player.changeX = game.player.speed;
     if (!game.inputs.left) game.inputs.right = true;
   }
+  game.player.findOrientation();
 });
 
 window.addEventListener("keyup", (e) => {
@@ -36,4 +37,5 @@ window.addEventListener("keyup", (e) => {
     // game.player.changeX -= game.player.speed;
     game.inputs.right = false;
   }
+  game.player.findOrientation();
 });
