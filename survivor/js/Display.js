@@ -26,6 +26,12 @@ class Display {
 
     game.player.draw();
 
+    if (game.attacks.length > 0) {
+      game.attacks.forEach((element) => {
+        element.draw();
+      });
+    }
+
     game.enemies.forEach((element) => {
       element.draw();
     });
