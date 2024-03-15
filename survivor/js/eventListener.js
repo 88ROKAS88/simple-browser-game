@@ -17,6 +17,9 @@ window.addEventListener("keydown", (e) => {
     // game.player.changeX = game.player.speed;
     if (!game.inputs.left) game.inputs.right = true;
   }
+  if (e.key == "1") {
+    game.attacks.push(new Attack());
+  }
   game.player.findOrientation();
 });
 
