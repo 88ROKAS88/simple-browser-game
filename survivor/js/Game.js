@@ -6,6 +6,9 @@ class Game {
     // #### ENEMIES ####
     this.enemies = [new Enemy()];
 
+    // #### ATTACKS ####
+    this.attacks = [];
+
     // #### SYSTEM ####
     this.inputs = { left: false, right: false, up: false, down: false };
     this.display = new Display(this);
