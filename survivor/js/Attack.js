@@ -12,8 +12,13 @@ class Attack {
     // this.orientation = 0;
 
     this.speed = 2;
+
+    this.timer = 30;
   }
 
+  execute() {
+    this.timer -= 1;
+  }
   calculatePositionY() {
     let positionY = game.player.positionY;
 

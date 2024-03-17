@@ -17,6 +17,15 @@ class Logic {
     game.enemies.forEach((element) => {
       element.ai();
     });
+    // attacks
+    if (game.attacks.length > 0) {
+      game.attacks.forEach((element, index, object) => {
+        element.execute();
+        if (element.timer < 1) {
+          object.splice(index, 1);
+        }
+      });
+    }
   }
 
   // stop game time
