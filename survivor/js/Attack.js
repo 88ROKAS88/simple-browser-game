@@ -2,8 +2,9 @@ class Attack {
   constructor() {
     //   this.game = game;
     // #### SIZE ####
-    this.sizeX = 50;
-    this.sizeY = 50;
+    this.size = 50;
+    // this.sizeX = 50;
+    // this.sizeY = 50;
     // #### POSITION AND MOVEMENT ####
     this.positionY = this.calculatePositionY();
     this.changeY = 0;
@@ -12,12 +13,31 @@ class Attack {
     // this.orientation = 0;
 
     this.speed = 2;
+    this.damage = 1;
 
     this.timer = 30;
+  }
+  collision() {
+    if (game.enemies.length > 0) {
+      game.enemies.forEach((element) => {
+        if (
+          this.positionX > element.positionX - this.size &&
+          this.positionX < element.positionX + element.size &&
+          this.positionY > element.positionY - this.size &&
+          this.positionY < element.positionY + element.size
+        ) {
+          console.log("DAMAGE");
+          element.health -= this.damage;
+        }
+      });
+    }
   }
 
   execute() {
     this.timer -= 1;
+    if (this.timer == 20) {
+      this.collision();
+    }
   }
   calculatePositionY() {
     let positionY = game.player.positionY;
@@ -68,8 +88,8 @@ class Attack {
     game.display.ctx.fillRect(
       this.positionX,
       this.positionY,
-      this.sizeX,
-      this.sizeY
+      this.size,
+      this.size
     );
   }
 }

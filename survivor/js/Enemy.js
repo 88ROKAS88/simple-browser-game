@@ -9,6 +9,7 @@ class Enemy {
     this.changeX = 0;
 
     // #### STATS ####
+    this.size = 50;
     this.speed = 1;
     this.health = 5;
   }
