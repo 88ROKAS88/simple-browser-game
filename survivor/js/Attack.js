@@ -19,7 +19,7 @@ class Attack {
   }
   collision() {
     if (game.enemies.length > 0) {
-      game.enemies.forEach((element) => {
+      game.enemies.forEach((element, index, object) => {
         if (
           this.positionX > element.positionX - this.size &&
           this.positionX < element.positionX + element.size &&
@@ -28,6 +28,9 @@ class Attack {
         ) {
           console.log("DAMAGE");
           element.health -= this.damage;
+          if (element.health <= 0) {
+            object.splice(index, 1);
+          }
         }
       });
     }
