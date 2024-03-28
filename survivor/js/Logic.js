@@ -14,8 +14,12 @@ class Logic {
     if (game.inputs.right) game.player.positionX += game.player.speed;
     if (game.inputs.left) game.player.positionX -= game.player.speed;
     // enemy movement
-    game.enemies.forEach((element) => {
-      element.ai();
+    game.enemies.forEach((element, index, object) => {
+      if (element.health <= 0) {
+        object.splice(index, 1);
+      } else {
+        element.ai();
+      }
     });
     // attacks
     if (game.attacks.length > 0) {
