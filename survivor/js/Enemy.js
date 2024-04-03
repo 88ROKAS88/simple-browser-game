@@ -30,6 +30,18 @@ class Enemy {
   draw() {
     game.display.ctx.fillStyle = "blue";
     game.display.ctx.fillRect(this.positionX, this.positionY, 50, 50);
+    game.display.ctx.drawImage(
+      game.display.sprite,
+      //game.frame,
+      0,
+      this.orientation,
+      50,
+      50,
+      this.positionX,
+      this.positionY,
+      50,
+      50
+    );
     this.displayHP();
   }
   findPlayer() {
@@ -100,6 +112,7 @@ class Enemy {
       this.positionX += this.speed;
     }
   }
+
   ai() {
     this.findPlayer();
     this.move();
