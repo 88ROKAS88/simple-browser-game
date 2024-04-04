@@ -112,9 +112,31 @@ class Enemy {
       this.positionX += this.speed;
     }
   }
-
+  findOrientation() {
+    if (this.right && this.up) {
+      this.orientation = 250;
+    } else if (this.right && this.down) {
+      this.orientation = 300;
+    } else if (this.left && this.up) {
+      this.orientation = 200;
+    } else if (this.left && this.down) {
+      this.orientation = 350;
+    } else if (this.left) {
+      console.log("left");
+      this.orientation = 0;
+    } else if (this.right) {
+      this.orientation = 50;
+    } else if (this.up) {
+      this.orientation = 100;
+    } else if (this.down) {
+      this.orientation = 150;
+    }
+  }
   ai() {
     this.findPlayer();
     this.move();
+    if (this.change) {
+      this.findOrientation();
+    }
   }
 }
