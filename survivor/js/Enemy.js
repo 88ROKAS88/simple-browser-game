@@ -22,6 +22,9 @@ class Enemy {
     this.size = 50;
     this.speed = 1;
     this.health = 5;
+
+    // #### SYSTEM ####
+    this.delay = 0;
   }
   displayHP() {
     game.display.ctx.fillStyle = "red";
@@ -132,8 +135,17 @@ class Enemy {
       this.orientation = 150;
     }
   }
+  calcDelay() {
+    this.delay++;
+    if (this.delay > 30) {
+      this.delay = 0;
+    }
+  }
   ai() {
-    this.findPlayer();
+    this.calcDelay();
+    if (this.delay == 0) {
+      this.findPlayer();
+    }
     this.move();
     if (this.change) {
       this.findOrientation();
