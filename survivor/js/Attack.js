@@ -1,11 +1,14 @@
 class Attack {
-  constructor() {
+  constructor(playerAtt, attackerPosY, attackerPosX, attackerOrientation) {
     //   this.game = game;
     // #### SIZE ####
     this.size = 50;
     // this.sizeX = 50;
     // this.sizeY = 50;
     // #### POSITION AND MOVEMENT ####
+    this.attackerPosY = attackerPosY;
+    this.attackerPosX = attackerPosX;
+    this.attackerOrientation = attackerOrientation;
     this.positionY = this.calculatePositionY();
     this.changeY = 0;
     this.positionX = this.calculatePositionX();
@@ -16,23 +19,29 @@ class Attack {
     this.damage = 1;
 
     this.timer = 30;
+    this.playerAtt = playerAtt;
   }
   collision() {
-    if (game.enemies.length > 0) {
-      game.enemies.forEach((element, index, object) => {
-        if (
-          this.positionX > element.positionX - this.size &&
-          this.positionX < element.positionX + element.size &&
-          this.positionY > element.positionY - this.size &&
-          this.positionY < element.positionY + element.size
-        ) {
-          console.log("DAMAGE");
-          element.health -= this.damage;
-          if (element.health <= 0) {
-            object.splice(index, 1);
+    // #### ATTACK AGAINST ENEMIES ####
+    if (this.playerAtt) {
+      if (game.enemies.length > 0) {
+        game.enemies.forEach((element, index, object) => {
+          if (
+            this.positionX > element.positionX - this.size &&
+            this.positionX < element.positionX + element.size &&
+            this.positionY > element.positionY - this.size &&
+            this.positionY < element.positionY + element.size
+          ) {
+            console.log("DAMAGE");
+            element.health -= this.damage;
+            if (element.health <= 0) {
+              object.splice(index, 1);
+            }
           }
-        }
-      });
+        });
+      }
+      // #### ATTACK AGAINST PLAYERS ####
+    } else {
     }
   }
 
@@ -43,9 +52,9 @@ class Attack {
     }
   }
   calculatePositionY() {
-    let positionY = game.player.positionY;
+    let positionY = this.attackerPosY;
 
-    switch (game.player.orientation) {
+    switch (this.attackerOrientation) {
       case 0:
         return positionY;
       case 50:
@@ -65,9 +74,9 @@ class Attack {
     }
   }
   calculatePositionX() {
-    let positionX = game.player.positionX;
+    let positionX = this.attackerPosX;
 
-    switch (game.player.orientation) {
+    switch (this.attackerOrientation) {
       case 0:
         return positionX - 50;
       case 50:

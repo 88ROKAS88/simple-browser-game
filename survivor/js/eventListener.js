@@ -18,7 +18,14 @@ window.addEventListener("keydown", (e) => {
     if (!game.inputs.left) game.inputs.right = true;
   }
   if (e.key == "1") {
-    game.attacks.push(new Attack());
+    game.attacks.push(
+      new Attack(
+        true,
+        game.player.positionY,
+        game.player.positionX,
+        game.player.orientation
+      )
+    );
   }
   game.player.findOrientation();
 });
