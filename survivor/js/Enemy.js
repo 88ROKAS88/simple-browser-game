@@ -141,6 +141,13 @@ class Enemy {
       this.delay = 0;
     }
   }
+  initiateAttack() {
+    if (!this.left && !this.right && !this.up && !this.left) {
+      game.attacks.push(
+        new Attack(false, this.positionY, this.positionX, this.orientation)
+      );
+    }
+  }
   ai() {
     this.calcDelay();
     if (this.delay == 0) {
@@ -149,6 +156,9 @@ class Enemy {
     this.move();
     if (this.change) {
       this.findOrientation();
+    }
+    if (this.delay == 10) {
+      this.initiateAttack();
     }
   }
 }
