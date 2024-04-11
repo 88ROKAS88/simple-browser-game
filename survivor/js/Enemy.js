@@ -1,11 +1,11 @@
 class Enemy {
-  constructor(game) {
+  constructor(game, positionX, positionY) {
     this.game = game;
 
     // #### POSITION ####
-    this.positionY = 0;
+    this.positionY = positionY;
     this.changeY = 0;
-    this.positionX = 0;
+    this.positionX = positionX;
     this.changeX = 0;
 
     // #### ORIENTATION ####

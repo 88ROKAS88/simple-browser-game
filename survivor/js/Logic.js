@@ -3,9 +3,18 @@ class Logic {
     this.game = game;
     this.gameTime;
     // this.gameTime = this.startTime(this.game);
+    this.count = 0;
   }
+
   // all game logic
   runGame(game) {
+    game.logic.count++;
+    if (game.logic.count >= 90) {
+      game.logic.count = 0;
+      game.logic.addEnemy();
+      // console.log("add enemy");
+    }
+    // console.log(game.logic.count);
     // player movement
     // game.player.positionY += game.player.changeY;
     // game.player.positionX += game.player.changeX;
@@ -40,5 +49,25 @@ class Logic {
   // start game time
   startTime(game) {
     return setInterval(this.runGame, 1000 / 30, game);
+  }
+
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+  getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+    // The maximum is exclusive and the minimum is inclusive
+  }
+
+  addEnemy() {
+    let position = this.getRandomInt(1, 2800);
+    // console.log(position);
+    if (position <= 700) {
+      game.enemies.push(new Enemy(game, position, 0));
+    } else if (position <= 1400) {
+      game.enemies.push(new Enemy(game, position - 700, 650));
+    } else if (position <= 2100) {
+      game.enemies.push(new Enemy(game, 0, position - 1400));
+    } else if (position <= 2800) {
+      game.enemies.push(new Enemy(game, 650, position - 2100));
+    }
   }
 }
