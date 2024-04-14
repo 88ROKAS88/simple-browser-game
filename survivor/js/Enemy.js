@@ -142,7 +142,7 @@ class Enemy {
     }
   }
   initiateAttack() {
-    if (!this.left && !this.right && !this.up && !this.left) {
+    if (!this.left && !this.right && !this.up && !this.down) {
       game.attacks.push(
         new Attack(false, this.positionY, this.positionX, this.orientation)
       );
@@ -150,7 +150,7 @@ class Enemy {
   }
   ai() {
     this.calcDelay();
-    if (this.delay == 0) {
+    if (this.delay == 1) {
       this.findPlayer();
     }
     this.move();

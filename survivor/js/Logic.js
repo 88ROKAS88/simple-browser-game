@@ -11,7 +11,9 @@ class Logic {
     game.logic.count++;
     if (game.logic.count >= 90) {
       game.logic.count = 0;
-      game.logic.addEnemy();
+      if (game.enemies.length < 10) {
+        game.logic.addEnemy();
+      }
       // console.log("add enemy");
     }
     // console.log(game.logic.count);
