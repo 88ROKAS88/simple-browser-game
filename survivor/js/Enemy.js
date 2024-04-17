@@ -125,7 +125,7 @@ class Enemy {
     } else if (this.left && this.down) {
       this.orientation = 350;
     } else if (this.left) {
-      console.log("left");
+      // console.log("left");
       this.orientation = 0;
     } else if (this.right) {
       this.orientation = 50;
@@ -143,6 +143,38 @@ class Enemy {
   }
   initiateAttack() {
     if (!this.left && !this.right && !this.up && !this.down) {
+      // correct orientatioin for attack
+      if (
+        game.player.positionX > this.positionX + 50 &&
+        game.player.positionY < this.positionY - 50
+      ) {
+        this.orientation = 250;
+      } else if (
+        game.player.positionX > this.positionX + 50 &&
+        game.player.positionY > this.positionY + 50
+      ) {
+        this.orientation = 300;
+      } else if (
+        game.player.positionX < this.positionX - 50 &&
+        game.player.positionY < this.positionY - 50
+      ) {
+        this.orientation = 200;
+      } else if (
+        game.player.positionX < this.positionX - 50 &&
+        game.player.positionY > this.positionY + 50
+      ) {
+        this.orientation = 350;
+      } else if (game.player.positionX < this.positionX - 50) {
+        // console.log("left");
+        this.orientation = 0;
+      } else if (game.player.positionX > this.positionX + 50) {
+        this.orientation = 50;
+      } else if (game.player.positionY < this.positionY - 50) {
+        this.orientation = 100;
+      } else if (game.player.positionY > this.positionY + 50) {
+        this.orientation = 150;
+      }
+      // initiate attack
       game.attacks.push(
         new Attack(false, this.positionY, this.positionX, this.orientation)
       );
