@@ -27,6 +27,15 @@ window.addEventListener("keydown", (e) => {
       )
     );
   }
+  if (e.key == "p") {
+    if (game.pause) {
+      game.pause = false;
+      game.logic.gameTime = game.logic.startTime(game);
+    } else {
+      game.pause = true;
+      game.logic.stopTime(game);
+    }
+  }
   game.player.findOrientation();
 });
 
