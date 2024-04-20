@@ -11,6 +11,7 @@ class Game {
 
     // #### SYSTEM ####
     this.inputs = { left: false, right: false, up: false, down: false };
+    this.pause = false;
     this.display = new Display(this);
     this.logic = new Logic();
 
@@ -19,6 +20,6 @@ class Game {
 
   start() {
     this.display.animate();
-    this.logic.startTime(this);
+    this.logic.gameTime = this.logic.startTime(this);
   }
 }
