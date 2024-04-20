@@ -45,7 +45,7 @@ class Logic {
 
   // stop game time
   stopTime(game) {
-    clearInterval(game.gameTime);
+    clearInterval(game.logic.gameTime);
   }
 
   // start game time
