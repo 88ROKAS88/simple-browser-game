@@ -18,6 +18,16 @@ class Display {
     this.ctx.fillStyle = "black";
     this.ctx.fillRect(0, 0, 700, 700);
   }
+  uiDraw() {
+    // display score
+    this.ctx.fillStyle = "white";
+    this.ctx.font = "48px serif";
+    this.ctx.fillText(game.score, 600, 50);
+
+    // display players health
+    this.ctx.fillStyle = "red";
+    this.ctx.fillRect(0, 650, game.player.health, 50);
+  }
 
   // animate
   animate() {
@@ -36,6 +46,7 @@ class Display {
       element.draw();
     });
 
+    game.display.uiDraw();
     requestAnimationFrame(game.display.animate);
   }
 }

@@ -8,6 +8,7 @@ class Player {
     this.orientation = 0;
 
     this.speed = 2;
+    this.health = 100;
   }
   draw() {
     game.display.ctx.fillStyle = "green";

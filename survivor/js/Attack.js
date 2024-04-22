@@ -36,6 +36,7 @@ class Attack {
             element.health -= this.damage;
             if (element.health <= 0) {
               object.splice(index, 1);
+              game.score += 1;
             }
           }
         });

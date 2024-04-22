@@ -15,6 +15,8 @@ class Game {
     this.display = new Display(this);
     this.logic = new Logic();
 
+    // #### SCORE ####
+    this.score = 0;
     console.log(this);
   }
 
