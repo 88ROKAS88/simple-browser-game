@@ -9,6 +9,7 @@ class Player {
 
     this.speed = 2;
     this.health = 100;
+    this.size = 50;
   }
   draw() {
     game.display.ctx.fillStyle = "green";

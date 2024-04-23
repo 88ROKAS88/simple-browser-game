@@ -43,6 +43,15 @@ class Attack {
       }
       // #### ATTACK AGAINST PLAYERS ####
     } else {
+      if (
+        this.positionX > game.player.positionX - this.size &&
+        this.positionX < game.player.positionX + game.player.size &&
+        this.positionY > game.player.positionY - this.size &&
+        this.positionY < game.player.positionY + game.player.size
+      ) {
+        game.player.health -= this.damage;
+        console.log("player takes damage");
+      }
     }
   }
 
