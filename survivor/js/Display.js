@@ -2,6 +2,10 @@ class Display {
   constructor(game) {
     this.game = game;
 
+    this.header = false;
+    this.headerText = "";
+    this.headerMargin = 300;
+
     this.sprite = document.createElement("img");
     // #### CANVAS ####
     this.canvas = document.getElementById("canvas");
@@ -28,6 +32,10 @@ class Display {
     this.ctx.fillStyle = "red";
     this.ctx.fillRect(0, 650, game.player.health, 50);
   }
+  drawHeader() {
+    this.ctx.fillStyle = "white";
+    this.ctx.fillText(this.headerText, this.headerMargin, 370);
+  }
 
   // animate
   animate() {
@@ -47,6 +55,9 @@ class Display {
     });
 
     game.display.uiDraw();
+    if (game.display.header) {
+      game.display.drawHeader();
+    }
     requestAnimationFrame(game.display.animate);
   }
 }
