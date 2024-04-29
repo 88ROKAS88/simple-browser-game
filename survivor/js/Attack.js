@@ -50,7 +50,9 @@ class Attack {
         this.positionY < game.player.positionY + game.player.size
       ) {
         game.player.health -= this.damage;
-        console.log("player takes damage");
+        if (game.player.health <= 0) {
+          game.over();
+        }
       }
     }
   }
