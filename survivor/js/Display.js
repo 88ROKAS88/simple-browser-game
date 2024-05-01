@@ -31,6 +31,8 @@ class Display {
     // display players health
     this.ctx.fillStyle = "red";
     this.ctx.fillRect(0, 650, game.player.health, 50);
+    this.ctx.fillStyle = "white";
+    this.ctx.fillText(game.player.health, 4, 695);
   }
   drawHeader() {
     this.ctx.fillStyle = "white";
