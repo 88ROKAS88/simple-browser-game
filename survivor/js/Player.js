@@ -39,7 +39,6 @@ class Player {
     } else if (this.game.inputs.left && this.game.inputs.down) {
       this.orientation = 350;
     } else if (this.game.inputs.left) {
-      console.log("left");
       this.orientation = 0;
     } else if (this.game.inputs.right) {
       this.orientation = 50;
@@ -47,6 +46,16 @@ class Player {
       this.orientation = 100;
     } else if (this.game.inputs.down) {
       this.orientation = 150;
+    }
+  }
+
+  attack(type) {
+    switch (type) {
+      case "1":
+        game.attacks.push(
+          new Attack(true, this.positionY, this.positionX, this.orientation)
+        );
+        break;
     }
   }
 }

@@ -18,14 +18,7 @@ window.addEventListener("keydown", (e) => {
     if (!game.inputs.left) game.inputs.right = true;
   }
   if (e.key == "1") {
-    game.attacks.push(
-      new Attack(
-        true,
-        game.player.positionY,
-        game.player.positionX,
-        game.player.orientation
-      )
-    );
+    game.player.attack(e.key);
   }
   if (e.key == "p") {
     game.pause(260, "PAUSE");
