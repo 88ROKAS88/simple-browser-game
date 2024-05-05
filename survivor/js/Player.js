@@ -10,6 +10,9 @@ class Player {
     this.speed = 2;
     this.health = 100;
     this.size = 50;
+
+    // #### COOL DOWNS ####
+    this.skill1CD = 50;
   }
   draw() {
     game.display.ctx.fillStyle = "green";
@@ -52,9 +55,13 @@ class Player {
   attack(type) {
     switch (type) {
       case "1":
-        game.attacks.push(
-          new Attack(true, this.positionY, this.positionX, this.orientation)
-        );
+        console.log(this.skill1CD);
+        if (this.skill1CD <= 0) {
+          this.skill1CD = 50;
+          game.attacks.push(
+            new Attack(true, this.positionY, this.positionX, this.orientation)
+          );
+        }
         break;
     }
   }

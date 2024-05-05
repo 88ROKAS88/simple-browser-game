@@ -17,6 +17,12 @@ class Logic {
       // console.log("add enemy");
     }
     // console.log(game.logic.count);
+
+    // player cool down
+    if (game.player.skill1CD > 0) {
+      game.player.skill1CD -= 2;
+      console.log(game.player.skill1CD);
+    }
     // player movement
     // game.player.positionY += game.player.changeY;
     // game.player.positionX += game.player.changeX;
