@@ -33,6 +33,10 @@ class Display {
     this.ctx.fillRect(0, 650, game.player.health, 50);
     this.ctx.fillStyle = "white";
     this.ctx.fillText(game.player.health, 4, 695);
+
+    // display skill cooldown
+    this.ctx.fillStyle = "white";
+    this.ctx.fillRect(200, 650, 50, game.player.skill1CD);
   }
   drawHeader() {
     this.ctx.fillStyle = "white";
