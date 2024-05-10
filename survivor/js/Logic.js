@@ -23,6 +23,9 @@ class Logic {
       game.player.skill1CD -= 2;
       console.log(game.player.skill1CD);
     }
+    if (game.player.skill2CD > 0) {
+      game.player.skill2CD -= 1;
+    }
     // player movement
     // game.player.positionY += game.player.changeY;
     // game.player.positionX += game.player.changeX;
