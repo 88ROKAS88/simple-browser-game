@@ -20,6 +20,9 @@ window.addEventListener("keydown", (e) => {
   if (e.key == "1") {
     game.player.attack(e.key);
   }
+  if (e.key == "2") {
+    game.player.attack(e.key);
+  }
   if (e.key == "p") {
     game.pause(260, "PAUSE");
   }
