@@ -20,6 +20,7 @@ class Attack {
 
     this.timer = 30;
     this.playerAtt = playerAtt;
+    this.frame = 0;
   }
   collision() {
     // #### ATTACK AGAINST ENEMIES ####
@@ -59,7 +60,11 @@ class Attack {
 
   execute() {
     this.timer -= 1;
+    if (this.timer == 10) {
+      this.frame = 100;
+    }
     if (this.timer == 20) {
+      this.frame = 50;
       this.collision();
     }
   }
@@ -108,8 +113,21 @@ class Attack {
     }
   }
   draw() {
-    game.display.ctx.fillStyle = "red";
-    game.display.ctx.fillRect(
+    // game.display.ctx.fillStyle = "red";
+    // game.display.ctx.fillRect(
+    //   this.positionX,
+    //   this.positionY,
+    //   this.size,
+    //   this.size
+    // );
+
+    game.display.ctx.drawImage(
+      game.display.skillSprite,
+      //game.frame,
+      0, //row
+      this.frame, // column
+      50,
+      50,
       this.positionX,
       this.positionY,
       this.size,

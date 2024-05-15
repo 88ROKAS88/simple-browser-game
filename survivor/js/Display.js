@@ -7,6 +7,7 @@ class Display {
     this.headerMargin = 300;
 
     this.sprite = document.createElement("img");
+    this.skillSprite = document.createElement("img");
     // #### CANVAS ####
     this.canvas = document.getElementById("canvas");
     this.canvasWidth = this.canvas.width;
@@ -15,6 +16,7 @@ class Display {
     this.ctx = canvas.getContext("2d");
     {
       this.sprite.src = "./sprites/playerSprite.png";
+      this.skillSprite.src = "./sprites/skillSprite.png";
     }
   }
 
