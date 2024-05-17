@@ -16,7 +16,7 @@ class Attack {
     // this.orientation = 0;
 
     this.speed = 2;
-    this.damage = 1;
+    this.damage = 5;
 
     this.timer = 30;
     this.playerAtt = playerAtt;
@@ -124,8 +124,8 @@ class Attack {
     game.display.ctx.drawImage(
       game.display.skillSprite,
       //game.frame,
-      0, //row
       this.frame, // column
+      0, //row
       50,
       50,
       this.positionX,
