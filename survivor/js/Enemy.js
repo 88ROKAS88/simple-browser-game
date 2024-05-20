@@ -28,7 +28,7 @@ class Enemy {
   }
   displayHP() {
     game.display.ctx.fillStyle = "red";
-    game.display.ctx.fillRect(this.positionX, this.positionY, this.health, 2);
+    game.display.ctx.fillRect(this.positionX, this.positionY, this.health, 5);
   }
   draw() {
     game.display.ctx.fillStyle = "blue";
