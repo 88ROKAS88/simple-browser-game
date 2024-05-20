@@ -51,6 +51,10 @@ class Display {
     game.display.ctx.clearRect(0, 0, game.canvasWidth, game.canvasHeight);
     game.display.backgroundDraw();
 
+    game.enemies.forEach((element) => {
+      element.draw();
+    });
+
     game.player.draw();
 
     if (game.attacks.length > 0) {
@@ -58,10 +62,6 @@ class Display {
         element.draw();
       });
     }
-
-    game.enemies.forEach((element) => {
-      element.draw();
-    });
 
     game.display.uiDraw();
     if (game.display.header) {
