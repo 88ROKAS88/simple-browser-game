@@ -38,7 +38,31 @@ class Display {
 
     // display skill cooldown
     this.ctx.fillStyle = "white";
+    // skill 1
+    game.display.ctx.drawImage(
+      game.display.skillSprite,
+      0, // column
+      0, //row
+      50,
+      50,
+      200,
+      650,
+      50,
+      60
+    );
     this.ctx.fillRect(200, 650, 50, game.player.skill1CD);
+    // skill 2
+    game.display.ctx.drawImage(
+      game.display.skillSprite,
+      0, // column
+      50, //row
+      50,
+      50,
+      300,
+      650,
+      50,
+      60
+    );
     this.ctx.fillRect(300, 650, 50, game.player.skill2CD);
   }
   drawHeader() {
