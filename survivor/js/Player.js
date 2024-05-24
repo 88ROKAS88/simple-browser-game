@@ -13,7 +13,7 @@ class Player {
 
     // #### COOL DOWNS ####
     this.skill1CD = 50;
-    this.skill2CD = 90;
+    this.skill2CD = 50;
   }
   draw() {
     game.display.ctx.fillStyle = "green";
