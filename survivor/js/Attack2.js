@@ -9,9 +9,7 @@ class Attack2 extends Attack {
 
   execute() {
     this.timer -= 1;
-    // if (this.timer == 20) {
-    //   this.collision();
-    // }
+
     if (this.timer == 1) {
       game.attacks.push(
         new Attack(true, this.positionY, this.positionX + 50, 0)
@@ -28,17 +26,9 @@ class Attack2 extends Attack {
   }
 
   draw() {
-    // game.display.ctx.fillStyle = "orange";
-    // game.display.ctx.fillRect(
-    //   this.positionX,
-    //   this.positionY,
-    //   this.size,
-    //   this.size
-    // );
-
     game.display.ctx.drawImage(
       game.display.skillSprite,
-      //game.frame,
+
       this.frame, // column
       50, //row
       50,

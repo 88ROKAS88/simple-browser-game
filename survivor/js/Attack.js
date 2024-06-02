@@ -1,10 +1,8 @@
 class Attack {
   constructor(playerAtt, attackerPosY, attackerPosX, attackerOrientation) {
-    //   this.game = game;
     // #### SIZE ####
     this.size = 50;
-    // this.sizeX = 50;
-    // this.sizeY = 50;
+
     // #### POSITION AND MOVEMENT ####
     this.attackerPosY = attackerPosY;
     this.attackerPosX = attackerPosX;
@@ -33,7 +31,6 @@ class Attack {
             this.positionY > element.positionY - this.size &&
             this.positionY < element.positionY + element.size
           ) {
-            console.log("DAMAGE");
             element.health -= this.damage;
             if (element.health <= 0) {
               object.splice(index, 1);
@@ -113,17 +110,9 @@ class Attack {
     }
   }
   draw() {
-    // game.display.ctx.fillStyle = "red";
-    // game.display.ctx.fillRect(
-    //   this.positionX,
-    //   this.positionY,
-    //   this.size,
-    //   this.size
-    // );
-
     game.display.ctx.drawImage(
       game.display.skillSprite,
-      //game.frame,
+
       this.frame, // column
       0, //row
       50,

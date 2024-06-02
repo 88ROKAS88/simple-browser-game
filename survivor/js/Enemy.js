@@ -125,7 +125,6 @@ class Enemy {
     } else if (this.left && this.down) {
       this.orientation = 350;
     } else if (this.left) {
-      // console.log("left");
       this.orientation = 0;
     } else if (this.right) {
       this.orientation = 50;
@@ -165,7 +164,6 @@ class Enemy {
       ) {
         this.orientation = 350;
       } else if (game.player.positionX < this.positionX - 50) {
-        // console.log("left");
         this.orientation = 0;
       } else if (game.player.positionX > this.positionX + 50) {
         this.orientation = 50;

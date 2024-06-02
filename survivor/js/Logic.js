@@ -2,7 +2,7 @@ class Logic {
   constructor(game) {
     this.game = game;
     this.gameTime;
-    // this.gameTime = this.startTime(this.game);
+
     this.count = 0;
   }
 
@@ -14,9 +14,7 @@ class Logic {
       if (game.enemies.length < 10) {
         game.logic.addEnemy();
       }
-      // console.log("add enemy");
     }
-    // console.log(game.logic.count);
 
     // player cool down
     if (game.player.skill1CD > 0) {
@@ -27,8 +25,7 @@ class Logic {
       game.player.skill2CD -= 0.5;
     }
     // player movement
-    // game.player.positionY += game.player.changeY;
-    // game.player.positionX += game.player.changeX;
+
     if (game.inputs.down) game.player.positionY += game.player.speed;
     if (game.inputs.up) game.player.positionY -= game.player.speed;
     if (game.inputs.right) game.player.positionX += game.player.speed;
@@ -70,7 +67,7 @@ class Logic {
 
   addEnemy() {
     let position = this.getRandomInt(1, 2800);
-    // console.log(position);
+
     if (position <= 700) {
       game.enemies.push(new Enemy(game, position, 0));
     } else if (position <= 1400) {
