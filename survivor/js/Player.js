@@ -14,6 +14,7 @@ class Player {
     // #### COOL DOWNS ####
     this.skill1CD = 50;
     this.skill2CD = 50;
+    this.skill3CD = 50;
   }
   draw() {
     game.display.ctx.fillStyle = "green";
@@ -67,9 +68,18 @@ class Player {
       case "2":
         console.log(this.skill2CD);
         if (this.skill2CD <= 0) {
-          this.skill2CD = 90;
+          this.skill2CD = 50;
           game.attacks.push(
             new Attack2(true, this.positionY, this.positionX, this.orientation)
+          );
+        }
+        break;
+      case "3":
+        console.log(this.skill2CD);
+        if (this.skill3CD <= 0) {
+          this.skill2CD = 50;
+          game.attacks.push(
+            new Attack3(true, this.positionY, this.positionX, this.orientation)
           );
         }
         break;
