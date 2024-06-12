@@ -64,6 +64,19 @@ class Display {
       60
     );
     this.ctx.fillRect(300, 650, 50, game.player.skill2CD);
+    // skill 3
+    game.display.ctx.drawImage(
+      game.display.skillSprite,
+      0, // column
+      50, //row
+      50,
+      50,
+      400,
+      650,
+      50,
+      60
+    );
+    this.ctx.fillRect(400, 650, 50, game.player.skill3CD);
   }
   drawHeader() {
     this.ctx.fillStyle = "white";
