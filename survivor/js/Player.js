@@ -77,7 +77,7 @@ class Player {
       case "3":
         console.log(this.skill2CD);
         if (this.skill3CD <= 0) {
-          this.skill2CD = 50;
+          this.skill3CD = 50;
           game.attacks.push(
             new Attack3(true, this.positionY, this.positionX, this.orientation)
           );
