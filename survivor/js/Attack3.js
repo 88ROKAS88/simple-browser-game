@@ -9,6 +9,8 @@ class Attack3 extends Attack {
 
   execute() {
     this.timer -= 1;
+    this.positionY += this.changeY;
+    this.positionX += this.changeX;
 
     if (this.timer == 1) {
       game.attacks.push(

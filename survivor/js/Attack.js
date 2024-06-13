@@ -7,10 +7,10 @@ class Attack {
     this.attackerPosY = attackerPosY;
     this.attackerPosX = attackerPosX;
     this.attackerOrientation = attackerOrientation;
-    this.positionY = this.calculatePositionY();
     this.changeY = 0;
-    this.positionX = this.calculatePositionX();
+    this.positionY = this.calculatePositionY();
     this.changeX = 0;
+    this.positionX = this.calculatePositionX();
     // this.orientation = 0;
 
     this.speed = 2;
@@ -74,16 +74,22 @@ class Attack {
       case 50:
         return positionY;
       case 100:
+        this.changeY = -1;
         return positionY - 50;
       case 150:
+        this.changeY = 1;
         return positionY + 50;
       case 200:
+        this.changeY = -1;
         return positionY - 50;
       case 250:
+        this.changeY = -1;
         return positionY - 50;
       case 300:
+        this.changeY = 1;
         return positionY + 50;
       case 350:
+        this.changeY = 1;
         return positionY + 50;
     }
   }
@@ -92,20 +98,26 @@ class Attack {
 
     switch (this.attackerOrientation) {
       case 0:
+        this.changeX = -1;
         return positionX - 50;
       case 50:
+        this.changeX = 1;
         return positionX + 50;
       case 100:
         return positionX;
       case 150:
         return positionX;
       case 200:
+        this.changeX = -1;
         return positionX - 50;
       case 250:
+        this.changeX = 1;
         return positionX + 50;
       case 300:
+        this.changeX = 1;
         return positionX + 50;
       case 350:
+        this.changeX = -1;
         return positionX - 50;
     }
   }
