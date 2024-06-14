@@ -19,7 +19,6 @@ class Logic {
     // player cool down
     if (game.player.skill1CD > 0) {
       game.player.skill1CD -= 2;
-      console.log(game.player.skill1CD);
     }
     if (game.player.skill2CD > 0) {
       game.player.skill2CD -= 0.5;

@@ -57,7 +57,6 @@ class Player {
   attack(type) {
     switch (type) {
       case "1":
-        console.log(this.skill1CD);
         if (this.skill1CD <= 0) {
           this.skill1CD = 50;
           game.attacks.push(
@@ -66,7 +65,6 @@ class Player {
         }
         break;
       case "2":
-        console.log(this.skill2CD);
         if (this.skill2CD <= 0) {
           this.skill2CD = 50;
           game.attacks.push(
@@ -75,7 +73,6 @@ class Player {
         }
         break;
       case "3":
-        console.log(this.skill2CD);
         if (this.skill3CD <= 0) {
           this.skill3CD = 50;
           game.attacks.push(
