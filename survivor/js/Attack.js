@@ -24,20 +24,34 @@ class Attack {
     // #### ATTACK AGAINST ENEMIES ####
     if (this.playerAtt) {
       if (game.enemies.length > 0) {
-        game.enemies.forEach((element, index, object) => {
+        // game.enemies.forEach((element, index, object) => {
+        //   if (
+        //     this.positionX > element.positionX - this.size &&
+        //     this.positionX < element.positionX + element.size &&
+        //     this.positionY > element.positionY - this.size &&
+        //     this.positionY < element.positionY + element.size
+        //   ) {
+        //     element.health -= this.damage;
+        //     if (element.health <= 0) {
+        //       object.splice(index, 1);
+        //       game.score += 1;
+        //     }
+        //   }
+        // });
+        for (let i = game.enemies.length - 1; i >= 0; i--) {
           if (
-            this.positionX > element.positionX - this.size &&
-            this.positionX < element.positionX + element.size &&
-            this.positionY > element.positionY - this.size &&
-            this.positionY < element.positionY + element.size
+            this.positionX > game.enemies[i].positionX - this.size &&
+            this.positionX < game.enemies[i].positionX + game.enemies[i].size &&
+            this.positionY > game.enemies[i].positionY - this.size &&
+            this.positionY < game.enemies[i].positionY + game.enemies[i].size
           ) {
-            element.health -= this.damage;
-            if (element.health <= 0) {
-              object.splice(index, 1);
+            game.enemies[i].health -= this.damage;
+            if (game.enemies[i].health <= 0) {
+              game.enemies.splice(i, 1);
               game.score += 1;
             }
           }
-        });
+        }
       }
       // #### ATTACK AGAINST PLAYERS ####
     } else {
