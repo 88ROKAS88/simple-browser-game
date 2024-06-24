@@ -19,9 +19,10 @@ class Enemy {
     this.change = false;
 
     // #### STATS ####
+    this.damage = 10;
     this.size = 50;
     this.speed = 1;
-    this.health = 5;
+    this.health = 20;
 
     // #### SYSTEM ####
     this.delay = 0;
@@ -174,7 +175,13 @@ class Enemy {
       }
       // initiate attack
       game.attacks.push(
-        new Attack(false, this.positionY, this.positionX, this.orientation)
+        new Attack(
+          false,
+          this.positionY,
+          this.positionX,
+          this.orientation,
+          this.damage
+        )
       );
     }
   }

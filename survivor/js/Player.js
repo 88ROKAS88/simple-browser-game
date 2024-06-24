@@ -7,6 +7,7 @@ class Player {
     this.changeX = 0;
     this.orientation = 0;
 
+    this.damage = 5;
     this.speed = 2;
     this.health = 100;
     this.size = 50;
@@ -60,7 +61,13 @@ class Player {
         if (this.skill1CD <= 0) {
           this.skill1CD = 50;
           game.attacks.push(
-            new Attack(true, this.positionY, this.positionX, this.orientation)
+            new Attack(
+              true,
+              this.positionY,
+              this.positionX,
+              this.orientation,
+              this.damage
+            )
           );
         }
         break;
@@ -68,7 +75,13 @@ class Player {
         if (this.skill2CD <= 0) {
           this.skill2CD = 50;
           game.attacks.push(
-            new Attack2(true, this.positionY, this.positionX, this.orientation)
+            new Attack2(
+              true,
+              this.positionY,
+              this.positionX,
+              this.orientation,
+              this.damage
+            )
           );
         }
         break;
@@ -76,7 +89,13 @@ class Player {
         if (this.skill3CD <= 0) {
           this.skill3CD = 50;
           game.attacks.push(
-            new Attack3(true, this.positionY, this.positionX, this.orientation)
+            new Attack3(
+              true,
+              this.positionY,
+              this.positionX,
+              this.orientation,
+              this.damage
+            )
           );
         }
         break;

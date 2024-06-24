@@ -1,8 +1,14 @@
 class Attack3 extends Attack {
-  constructor(playerAtt, attackerPosY, attackerPosX, attackerOrientation) {
-    super(playerAtt, attackerPosY, attackerPosX, attackerOrientation);
+  constructor(
+    playerAtt,
+    attackerPosY,
+    attackerPosX,
+    attackerOrientation,
+    damage
+  ) {
+    super(playerAtt, attackerPosY, attackerPosX, attackerOrientation, damage);
 
-    this.damage = 1;
+    this.damage = damage;
 
     this.timer = 60;
   }
@@ -14,7 +20,13 @@ class Attack3 extends Attack {
 
     if (this.timer == 1) {
       game.attacks.push(
-        new Attack(true, this.positionY, this.positionX + 50, 0)
+        new Attack(
+          true,
+          this.positionY,
+          this.positionX + 50,
+          0,
+          this.damage * 2
+        )
       );
     }
     if (this.timer == 15 || this.timer == 45) {

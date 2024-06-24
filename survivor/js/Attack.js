@@ -1,5 +1,11 @@
 class Attack {
-  constructor(playerAtt, attackerPosY, attackerPosX, attackerOrientation) {
+  constructor(
+    playerAtt,
+    attackerPosY,
+    attackerPosX,
+    attackerOrientation,
+    damage
+  ) {
     // #### SIZE ####
     this.size = 50;
 
@@ -14,7 +20,7 @@ class Attack {
     // this.orientation = 0;
 
     this.speed = 2;
-    this.damage = 5;
+    this.damage = damage * 2;
 
     this.timer = 30;
     this.playerAtt = playerAtt;
