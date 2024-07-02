@@ -19,7 +19,7 @@ class Enemy {
     this.change = false;
 
     // #### STATS ####
-    this.damage = 10;
+    this.damage = 5;
     this.size = 50;
     this.speed = 1;
     this.health = 20;

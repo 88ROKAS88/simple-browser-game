@@ -55,6 +55,9 @@ class Attack {
             if (game.enemies[i].health <= 0) {
               game.enemies.splice(i, 1);
               game.score += 1;
+              if (game.player.health < 100) {
+                game.player.health++;
+              }
             }
           }
         }
