@@ -4,15 +4,27 @@ class Logic {
     this.gameTime;
 
     this.count = 0;
+    this.frameCount = 0;
   }
 
   // all game logic
   runGame(game) {
+    // enemy spawn count
     game.logic.count++;
     if (game.logic.count >= 90) {
       game.logic.count = 0;
       if (game.enemies.length < 10) {
         game.logic.addEnemy();
+      }
+    }
+    // frame count
+    game.logic.frameCount++;
+    if (game.logic.frameCount >= 5) {
+      game.logic.frameCount = 0;
+      if (game.frame == 0) {
+        game.frame = 50;
+      } else {
+        game.frame = 0;
       }
     }
 

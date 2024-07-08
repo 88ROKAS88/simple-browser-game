@@ -15,6 +15,7 @@ class Game {
     this.inputs = { left: false, right: false, up: false, down: false };
     this.display = new Display(this);
     this.logic = new Logic();
+    this.frame = 0;
 
     // #### SCORE ####
     this.score = 0;

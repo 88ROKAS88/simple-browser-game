@@ -19,12 +19,12 @@ class Player {
   }
   draw() {
     game.display.ctx.fillStyle = "green";
-    game.display.ctx.fillRect(this.positionX, this.positionY, 50, 50);
+    // game.display.ctx.fillRect(this.positionX, this.positionY, 50, 50);
 
     game.display.ctx.drawImage(
       game.display.sprite,
-      //game.frame,
-      0,
+      game.frame,
+      // 0,
       game.player.orientation,
       50,
       50,
