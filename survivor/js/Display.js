@@ -34,9 +34,9 @@ class Display {
 
     // display players health
     this.ctx.fillStyle = "red";
-    this.ctx.fillRect(0, 650, game.player.health, 50);
+    this.ctx.fillRect(50, 650, game.player.health, 50);
     this.ctx.fillStyle = "white";
-    this.ctx.fillText(game.player.health, 4, 695);
+    this.ctx.fillText(game.player.health, 54, 695);
 
     // display skill cooldown
     this.ctx.fillStyle = "white";
@@ -47,12 +47,12 @@ class Display {
       0, //row
       50,
       50,
-      200,
+      250,
       650,
       50,
       60
     );
-    this.ctx.fillRect(200, 650, 50, game.player.skill1CD);
+    this.ctx.fillRect(250, 650, 50, game.player.skill1CD);
     // skill 2
     game.display.ctx.drawImage(
       game.display.skillSprite,
@@ -73,12 +73,12 @@ class Display {
       50, //row
       50,
       50,
-      400,
+      350,
       650,
       50,
       60
     );
-    this.ctx.fillRect(400, 650, 50, game.player.skill3CD);
+    this.ctx.fillRect(350, 650, 50, game.player.skill3CD);
   }
   drawHeader() {
     this.ctx.fillStyle = "white";
