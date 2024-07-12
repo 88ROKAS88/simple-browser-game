@@ -9,6 +9,7 @@ class Display {
     this.sprite = document.createElement("img");
     this.enemySprite = document.createElement("img");
     this.skillSprite = document.createElement("img");
+    this.interfaceImage = document.createElement("img");
     // #### CANVAS ####
     this.canvas = document.getElementById("canvas");
     this.canvasWidth = this.canvas.width;
@@ -19,6 +20,7 @@ class Display {
       this.sprite.src = "./sprites/playerSprite.png";
       this.enemySprite.src = "./sprites/enemySprite.png";
       this.skillSprite.src = "./sprites/skillSprite.png";
+      this.interfaceImage.src = "./sprites/UI.png";
     }
   }
 
@@ -50,7 +52,7 @@ class Display {
       250,
       650,
       50,
-      60
+      50
     );
     this.ctx.fillRect(250, 650, 50, game.player.skill1CD);
     // skill 2
@@ -63,7 +65,7 @@ class Display {
       300,
       650,
       50,
-      60
+      50
     );
     this.ctx.fillRect(300, 650, 50, game.player.skill2CD);
     // skill 3
@@ -76,9 +78,21 @@ class Display {
       350,
       650,
       50,
-      60
+      50
     );
     this.ctx.fillRect(350, 650, 50, game.player.skill3CD);
+    // draw UI image
+    game.display.ctx.drawImage(
+      game.display.interfaceImage,
+      0, // column
+      0, //row
+      700,
+      700,
+      0,
+      0,
+      700,
+      700
+    );
   }
   drawHeader() {
     this.ctx.fillStyle = "white";
