@@ -16,6 +16,7 @@ class Player {
     this.skill1CD = 50;
     this.skill2CD = 50;
     this.skill3CD = 50;
+    this.skill4CD = 50;
   }
   draw() {
     game.display.ctx.fillStyle = "green";
@@ -90,6 +91,20 @@ class Player {
           this.skill3CD = 50;
           game.attacks.push(
             new Attack3(
+              true,
+              this.positionY,
+              this.positionX,
+              this.orientation,
+              this.damage
+            )
+          );
+        }
+        break;
+      case "4":
+        if (this.skill4CD <= 0) {
+          this.skill4CD = 50;
+          game.attacks.push(
+            new Attack4(
               true,
               this.positionY,
               this.positionX,

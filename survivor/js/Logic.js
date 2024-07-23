@@ -38,6 +38,9 @@ class Logic {
     if (game.player.skill3CD > 0) {
       game.player.skill3CD -= 0.5;
     }
+    if (game.player.skill4CD > 0) {
+      game.player.skill4CD -= 0.5;
+    }
     // player movement
 
     if (game.inputs.down) game.player.positionY += game.player.speed;
