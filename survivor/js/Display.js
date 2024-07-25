@@ -81,6 +81,9 @@ class Display {
       50
     );
     this.ctx.fillRect(350, 650, 50, game.player.skill3CD);
+    // skill 4
+    this.ctx.fillRect(425, 650, 1, 50);
+    this.ctx.fillRect(400, 650, 50, game.player.skill4CD);
     // draw UI image
     game.display.ctx.drawImage(
       game.display.interfaceImage,
