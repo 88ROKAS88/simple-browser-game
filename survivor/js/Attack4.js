@@ -10,7 +10,7 @@ class Attack4 extends Attack {
 
     this.damage = damage;
 
-    this.timer = 60;
+    this.timer = 30;
 
     this.positionY2 = this.calculatePositionY2();
     this.positionX2 = this.calculatePositionX2();
@@ -25,22 +25,22 @@ class Attack4 extends Attack {
       case 50:
         return positionY + 25;
       case 100:
-        this.changeY = -1;
+        this.changeY = -2;
         return positionY;
       case 150:
-        this.changeY = 1;
+        this.changeY = 2;
         return positionY + 50;
       case 200:
-        this.changeY = -1;
+        this.changeY = -2;
         return positionY;
       case 250:
-        this.changeY = -1;
+        this.changeY = -2;
         return positionY;
       case 300:
-        this.changeY = 1;
+        this.changeY = 2;
         return positionY + 50;
       case 350:
-        this.changeY = 1;
+        this.changeY = 2;
         return positionY + 50;
     }
   }
@@ -49,26 +49,26 @@ class Attack4 extends Attack {
 
     switch (this.attackerOrientation) {
       case 0:
-        this.changeX = -1;
+        this.changeX = -2;
         return positionX;
       case 50:
-        this.changeX = 1;
+        this.changeX = 2;
         return positionX + 50;
       case 100:
         return positionX + 25;
       case 150:
         return positionX + 25;
       case 200:
-        this.changeX = -1;
+        this.changeX = -2;
         return positionX;
       case 250:
-        this.changeX = 1;
+        this.changeX = 2;
         return positionX + 50;
       case 300:
-        this.changeX = 1;
+        this.changeX = 2;
         return positionX + 50;
       case 350:
-        this.changeX = -1;
+        this.changeX = -2;
         return positionX;
     }
   }
@@ -119,7 +119,8 @@ class Attack4 extends Attack {
   }
   execute() {
     this.timer -= 1;
-
+    this.positionY += this.changeY;
+    this.positionX += this.changeX;
     if (this.timer == 29) {
       this.collision();
     }
